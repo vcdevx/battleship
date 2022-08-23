@@ -7,45 +7,30 @@ test('ship get placed', () => {
 })
 
 test('ships at row 0, col 1', () => {
-    expect(gameboard.board[0][1]).toBe('ship')
+    expect(gameboard.board[0][1]).toStrictEqual({'shipIndex': 0, 'shipID': 0})
 })
 
 test('ships at row 0, col 2', () => {
-    expect(gameboard.board[0][2]).toBe('ship')
+    expect(gameboard.board[0][2]).toStrictEqual({'shipIndex': 1, 'shipID': 0})
 })
 
-test('ships at row 0, col 3', () => {
-    expect(gameboard.board[0][3]).toBe('')
+test('receieve attack on second index of ship', () => {
+    gameboard.receiveAttack(0, 2);
 })
 
-test('ship get placed', () => {
-    gameboard.placeShip(2,5,5,'vertical')
+test('receieve attack on first index of ship', () => {
+    gameboard.receiveAttack(0, 1);
 })
 
-test('ships at row 5, col 5', () => {
-    expect(gameboard.board[5][5]).toBe('ship')
+test('check if ship sank', () => {
+    gameboard.ships[0].isSunk();
 })
 
-test('ships at row 6, col 5', () => {
-    expect(gameboard.board[6][5]).toBe('ship')
+test('check ship status to be true', () => {
+    expect(gameboard.checkShipStatus()).toStrictEqual(true);
 })
 
-test('ships at row 7, col 5', () => {
-    expect(gameboard.board[7][5]).toBe('')
+test('check if hit registered on second index of ship', () => {
+    expect(gameboard.ships).toBe('hit');
 })
 
-test('ship receives attack', () => {
-    gameboard.receiveAttack(6,5)
-})
-
-test('ship should be hit', () => {
-    expect(gameboard.board[6][5]).toBe('hit')
-})
-
-test('ship attack misses', () => {
-    gameboard.receiveAttack(7,5)
-})
-
-test('spot should be miss', () => {
-    expect(gameboard.board[7][5]).toBe('miss')
-})
