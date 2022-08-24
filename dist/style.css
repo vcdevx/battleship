@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Graduate&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  * {
+    margin: 0;
+  }
+  html, body {
+    height: 100%;
+    font-family: 'Graduate', cursive;
+  }
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  input, button, textarea, select {
+    font: inherit;
+  }
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  #root, #__next {
+    isolation: isolate;
+  }
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    background-color: black;
+    color: white;
+    margin-bottom: 0px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.gameStatusContainer {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+}
+
+.gameStatus {
+    color: blue;
+}
+
+.playerContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 350px;
+}
+
+.boardTitleContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.playerBoardContainer, .aiBoardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    width: 10%;
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cell>span {
+    color: rgb(56, 50, 50);
+}
+
+.playerCell {
+    background-color: #9FFCCF;
+}
+
+.aiCell {
+    background-color: #E2D1FF;
+}
+
+.shipCell {
+    background-color: #9D9D9D;
+}
+
+.hitCell {
+    background-color: #FF5449;
+}
+
+.missCell {
+    background-color: #72C3E3;
+}
+
+.sunkCell {
+    background-color: #8A302B;
+}

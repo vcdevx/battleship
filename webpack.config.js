@@ -1,4 +1,5 @@
 module.exports = {
+    watch: true,
     module: {
       loaders: [
         {exclude: ['node_modules'], loader: 'babel', test: /\.jsx?$/},

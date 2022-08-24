@@ -4,11 +4,238 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="style.css">
     <script src="main.js" defer></script>
     <title>Battleship</title>
 </head>
 <body>
-    
+    <header>
+        <h1>Battleship</h1>
+    </header>
+    <main>
+        <div class="gameStatusContainer">
+            <h3 class="gameStatus"></h3>
+        </div>
+        <div class="playerContainer">
+            <div class="boardTitleContainer">
+                <h2>Your Fleet</h2>
+            </div>
+            <div class="playerBoardContainer">
+                <div class="cell playerCell sunkCell"><span class="material-symbols-outlined">
+                    adjust
+                    </span></div>
+                <div class="cell playerCell sunkCell"></div>
+                <div class="cell playerCell sunkCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell missCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+                <div class="cell playerCell"></div>
+            </div>
+        </div>
+        <div class="playerContainer">
+            <div class="boardTitleContainer">
+                <h2>Enemy Fleet</h2>
+            </div>
+            <div class="aiBoardContainer">
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+                <div class="cell aiCell"></div>
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
 </body>
 </html>
