@@ -1,8 +1,9 @@
 class Ship {
-    constructor(num) {
+    constructor(num, shipName) {
         this.length = num;
         this.sunk = false;
         this.shipStatus = Array(num).fill("");
+        this.shipName = shipName;
     }
 
     hit(index) {

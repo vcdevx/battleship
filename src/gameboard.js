@@ -1,7 +1,8 @@
 import { Ship } from "./ship";
+import { randomNumber, randomDirection } from './helper';
 
 class Gameboard {
-    constructor() {
+    constructor(name) {
         this.board = [
             ['','','','','','','','','',''],
             ['','','','','','','','','',''],
@@ -16,45 +17,60 @@ class Gameboard {
         ];
         this.ships = [];
         this.shipsRemaining = null;
+        this.name = name;
     }
 
-    placeShip(length, row, col, direction) {
+    placeShip(length, row, col, direction, shipName) {
         if (direction === 'vertical') {
-            if (row + length > 10) {
-                throw new Error('Ship is out of bounds');
+            if (row + length > 10 || this.checkIfNotEmpty(length, row, col, direction) === true) {
+                return this.placeShip(length, randomNumber(10), randomNumber(10), randomDirection(), shipName);
             }
             // create new ship and push it into ship array
             let currentShip = new Ship(length);
+            currentShip.shipName = shipName;
             if (this.ships === []) {
                 currentShip.id = 0
             } else {
-                currentShip.id = this.ships.length - 1;
+                currentShip.id = this.ships.length; 
             }
             this.ships.push(currentShip);
             // add ship to board
             for (let i = 0; i < length; i++) {
-                let ship = {'shipIndex': undefined, 'shipID': currentShip.id,}
+                let ship = {'shipIndex': undefined, 'shipID': currentShip.id}
+                console.log(this.board)
+                console.log(this.ships)
                 if (this.board[row + i][col] === '') {
                     ship.shipIndex = i;
                     this.board[row + i][col] = ship;
-                } else throw new Error('Ship cannot be placed here');
+                } else {
+                    throw Error('ship can not be placed here vertically');
+                }
             }
         }
         if (direction === 'horizontal') {
-            if (col + length > 10) {
-                throw new Error('Ship is out of bounds');
+            if (col + length > 10 || this.checkIfNotEmpty(length, row, col, direction) === true) {
+                return this.placeShip(length, randomNumber(10), randomNumber(10), randomDirection(), shipName);
             }
             // create new ship and push it into ship array
             let currentShip = new Ship(length);
+            currentShip.shipName = shipName;
+            if (this.ships === []) {
+                currentShip.id = 0
+            } else {
+                currentShip.id = this.ships.length; 
+            }
             this.ships.push(currentShip);
-            currentShip.id = this.ships.length - 1;
             // add ship to board
             for (let i = 0; i < length; i++) {
-                let ship = {'shipIndex': undefined, 'shipID': currentShip.id,}
+                let ship = {'shipIndex': undefined, 'shipID': currentShip.id}
+                console.log(this.board)
+                console.log(this.ships)
                 if (this.board[row][col + i] === '') {
                     ship.shipIndex = i;
                     this.board[row][col + i] = ship;
-                } else throw new Error('Ship cannot be placed here');
+                } else {
+                    throw Error('ship can not be placed here horizontally');
+                }
             }
         }
     }
@@ -63,7 +79,7 @@ class Gameboard {
         if (this.board[row][col] === '') {
             this.board[row][col] = 'miss'
         } else if (this.board[row][col] != 'miss' || this.board[row][col] != '') {
-            this.ships[this.board[row][col].shipID].hit(this.board[row][col].shipIndex)
+            this.ships[this.board[row][col].shipID].hit(this.board[row][col].shipIndex) 
         }
     }
 
@@ -72,6 +88,32 @@ class Gameboard {
             return true
         } else return false
     }
+
+    checkIfNotEmpty(length, row, col, direction) {
+        let result = false;
+        if (direction === 'horizontal' && row !== undefined) {
+            for (let i = 0; i < length +1; i++) {
+                if (this.board[row][col + i] !== '') {
+                    result = true;
+                    break;
+                } 
+            } return result;
+        }
+
+        if (direction === 'vertical') {
+            let result = false;
+            for (let i = 0; i < length; i++) {
+                if (this.board[row + i][col] !== '') {
+                    result = true;
+                    break;
+                } 
+            } return result;
+        }    
+    }
+
+    checkIfLost() {
+        return this.ships.every(e => e.sunk == true);
+        }
 }
 
 export { Gameboard }
