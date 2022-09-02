@@ -7,4 +7,8 @@ let randomDirection = () => {
     }
 }
 
-export { randomNumber, randomDirection }
+const refreshPage = () => {
+    location.reload();
+}
+
+export { randomNumber, randomDirection, refreshPage }
